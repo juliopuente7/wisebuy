@@ -12,3 +12,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Dar más tiempo a la función (evita el corte a los 10s con varias fotos)
+[functions]
+  node_bundler = "esbuild"
+
+[functions."chat"]
+  # segundos máximos (hasta 26 en plan gratis background no; en normal el máx efectivo lo fija Netlify)
+  included_files = []
