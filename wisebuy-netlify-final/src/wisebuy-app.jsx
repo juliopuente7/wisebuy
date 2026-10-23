@@ -1282,7 +1282,6 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
                       <div style={{ fontWeight: 700, fontSize: 15.5, color: C.ink }}>{t}</div>
                       <div style={{ color: C.sub, fontSize: 13.5, lineHeight: 1.5, marginTop: 2 }}>{d}</div>
                     </div>
-                    <span style={{ flexShrink: 0, fontSize: 20, color: col, fontWeight: 700 }}>→</span>
                   </button>
                 ))}
               </div>
@@ -1327,7 +1326,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
                   ["Cuánto se puede negociar el precio", "cuanto-negociar-precio-piso"],
                   ["Qué es la ITE y por qué te importa", "que-es-la-ite"],
                 ].map(([t, slug]) => (
-                  <a key={slug} href={"/guias/" + slug + "/"} style={{ display: "flex", alignItems: "center", gap: 10, background: C.card, border: `1px solid ${C.line}`, borderRadius: 12, padding: "14px 16px", textDecoration: "none", color: C.navy, fontWeight: 600, fontSize: 14.5, lineHeight: 1.35 }}>
+                  <a key={slug} href={"/guias/" + slug + ".html"} style={{ display: "flex", alignItems: "center", gap: 10, background: C.card, border: `1px solid ${C.line}`, borderRadius: 12, padding: "14px 16px", textDecoration: "none", color: C.navy, fontWeight: 600, fontSize: 14.5, lineHeight: 1.35 }}>
                     <span style={{ color: C.orange, fontWeight: 700 }}>›</span><span>{t}</span>
                   </a>
                 ))}
