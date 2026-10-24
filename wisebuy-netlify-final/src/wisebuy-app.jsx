@@ -1213,8 +1213,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
 
             {/* Fotos: anuncio + visita */}
             <div style={{ display: "grid", gap: 18, marginBottom: 10 }}>
-              <Dropzone prevs={prevA} which="a" title="Fotos del anuncio" hint="Las de Idealista/Fotocasa · opcional" accent={C.sub} />
-              <Dropzone prevs={prevV} which="v" title="Fotos de tu visita · recomendado" hint="Más fiables: enfoca defectos, esquinas, techos, instalaciones" accent={C.orange} />
+              <Dropzone prevs={prevV} which="v" title="Fotos de la vivienda" hint="Enfoca defectos, esquinas, techos e instalaciones" accent={C.orange} />
             </div>
             <div style={{ display: "flex", gap: 8, alignItems: "flex-start", background: C.bg2, border: `1px solid ${C.line}`, borderRadius: 10, padding: "10px 13px", marginBottom: 22, fontSize: 12.5, color: C.sub, lineHeight: 1.5 }}>
               <span style={{ fontSize: 15 }}>📸</span>
@@ -1804,7 +1803,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
               {[
                 ["1", "📋", "Descarga la checklist de visita", "Antes de ir a ver el piso, pulsa \u201cDescargar checklist de visita\u201d (es gratis). Es la lista de qué fotos sacar, qué pruebas hacer y qué papeles pedir. Imprímela o llévala en el móvil."],
                 ["2", "🔍", "Haz la visita con la checklist", "En el piso, ve marcando la checklist punto por punto y haz fotos de cada zona: fachada, cubierta, ventanas, baños, cocina, techos, instalaciones... Cuantas más fotos y mejor, más preciso será el informe."],
-                ["3", "🖼️", "Adjunta las fotos en la web", "De vuelta, sube aquí las fotos del anuncio y las de tu visita en sus apartados. Puedes subir varias a la vez."],
+                ["3", "🖼️", "Adjunta las fotos en la web", "De vuelta, sube aquí las fotos de la vivienda. Puedes subir varias a la vez."],
                 ["4", "📝", "Rellena los datos y tus notas", "Pon el precio que piden, los m², el tipo de inmueble y el código postal o la localidad. En el campo de notas cuenta lo que viste (por voz o texto): humedades, ruidos, antigüedad de cosas, lo que sea. Eso afina mucho el análisis."],
                 ["5", "⚡", "Genera el informe", "Pulsa \u201cGenerar informe técnico\u201d y en un par de minutos tienes el análisis completo, descargable en PDF."],
               ].map(([n, ico, t, d]) => (
