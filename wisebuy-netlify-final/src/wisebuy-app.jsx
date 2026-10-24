@@ -1072,7 +1072,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
       </div>
 
       <div className="no-print" style={{ borderBottom: `2px solid transparent`, borderImage: `linear-gradient(90deg, ${C.yellow}, ${C.orange}) 1`, background: C.navy, position: "sticky", top: 0, zIndex: 10 }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "14px 28px", display: "flex", alignItems: "center", gap: 11 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px 28px", display: "flex", alignItems: "center", gap: 11 }}>
           <div onClick={reset} title="Volver al inicio" style={{ display: "flex", alignItems: "center", gap: 11, cursor: "pointer" }}>
             <LogoMark size={28} />
             <span style={{ fontWeight: 700, fontSize: 16, letterSpacing: -0.2, color: "#fff" }}>WiseBuy</span>
@@ -1083,7 +1083,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
       </div>
 
       {!result && !verificandoPago && (
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "28px 20px 6px", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 20px 6px", position: "relative", zIndex: 1 }}>
           <div className="hero-box" style={{ display: "grid", gridTemplateColumns: "1.12fr 0.88fr", background: "linear-gradient(180deg,#ffffff,#EEF2F7)", border: `1px solid ${C.line}`, borderRadius: 22, overflow: "hidden", boxShadow: "0 10px 34px rgba(22,41,74,.09)" }}>
             <div style={{ padding: "42px 38px" }}>
               <span style={{ display: "inline-block", fontFamily: mono, fontSize: 11.5, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.orange, background: C.amberSoft, padding: "5px 12px", borderRadius: 999, marginBottom: 16 }}>Tu perito de bolsillo</span>
@@ -1113,7 +1113,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
         </div>
       )}
 
-      <div className="app-main" style={{ maxWidth: 960, margin: "0 auto", padding: "20px 28px 96px", position: "relative", zIndex: 1 }}>
+      <div className="app-main" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 28px 96px", position: "relative", zIndex: 1 }}>
         {verificandoPago && (
           <div style={{ background: C.card, border: `1px solid ${C.orange}55`, borderRadius: 16, padding: "34px 24px", textAlign: "center", marginBottom: 20 }}>
             <div style={{ fontSize: 34, marginBottom: 10 }}>🔒</div>
