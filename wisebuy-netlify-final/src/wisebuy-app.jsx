@@ -1215,15 +1215,15 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             <div style={{ display: "grid", gap: 18, marginBottom: 10 }}>
               <Dropzone prevs={prevV} which="v" title="Fotos de la vivienda" hint="Enfoca defectos, esquinas, techos e instalaciones" accent={C.orange} />
             </div>
-            <div style={{ display: "flex", gap: 8, alignItems: "flex-start", background: C.bg2, border: `1px solid ${C.line}`, borderRadius: 10, padding: "10px 13px", marginBottom: 22, fontSize: 12.5, color: C.sub, lineHeight: 1.5 }}>
+            <div style={{ display: "flex", gap: 8, alignItems: "flex-start", background: C.bg2, border: `1px solid ${C.line}`, borderRadius: 10, padding: "9px 12px", marginBottom: 14, fontSize: 12.5, color: C.sub, lineHeight: 1.5 }}>
               <span style={{ fontSize: 15 }}>📸</span>
-              <span>Con <b style={{ color: C.ink }}>8-10 fotos buenas</b> es suficiente para que la IA analice bien. Mejor <b style={{ color: C.ink }}>pocas y claras</b> (que se vean los defectos, instalaciones y esquinas) que muchas repetidas.</span>
+              <span>Con <b style={{ color: C.ink }}>8-10 fotos buenas</b> es suficiente. Mejor <b style={{ color: C.ink }}>pocas y claras</b> que muchas repetidas.</span>
             </div>
 
             {/* Notas de voz */}
-            <div style={{ marginBottom: 24 }}>
+            <div style={{ marginBottom: 14 }}>
               <span style={label}>Notas de la visita · lo que viste en cada punto de la checklist (voz o texto)</span>
-              <div style={{ display: "flex", gap: 8, alignItems: "flex-start", background: C.panelYellow, border: `1px solid ${C.yellow}55`, borderRadius: 10, padding: "10px 13px", marginBottom: 10, fontSize: 12.5, color: C.sub, lineHeight: 1.5 }}>
+              <div style={{ display: "flex", gap: 8, alignItems: "flex-start", background: C.panelYellow, border: `1px solid ${C.yellow}55`, borderRadius: 10, padding: "9px 12px", marginBottom: 8, fontSize: 12, color: C.sub, lineHeight: 1.45 }}>
                 <span style={{ fontSize: 15 }}>⭐</span>
                 <span><b style={{ color: C.ink }}>Esto es lo más importante del informe.</b> Las fotos ayudan, pero lo que de verdad afina el análisis es que <b style={{ color: C.ink }}>describas lo que viste</b> en cada punto de la checklist: humedades, ruidos, antigüedad de la cubierta y ventanas, si salta el diferencial, olores… Cuanto más cuentes, mejor sale.</span>
               </div>
@@ -1240,7 +1240,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </div>
 
             <button onClick={analizar} disabled={!totalFotos || loading}
-              style={{ width: "100%", padding: "16px 24px", borderRadius: 11, border: "none", fontFamily: sans, fontWeight: 700, fontSize: 16, cursor: totalFotos && !loading ? "pointer" : "not-allowed", background: totalFotos && !loading ? `linear-gradient(135deg, ${C.yellow}, ${C.orange})` : C.line, color: totalFotos && !loading ? "#111" : C.faint, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
+              style={{ width: "100%", padding: "16px 24px", borderRadius: 11, border: "none", fontFamily: sans, fontWeight: 700, fontSize: 16, cursor: totalFotos && !loading ? "pointer" : "not-allowed", background: totalFotos && !loading ? `linear-gradient(135deg, ${C.yellow}, ${C.orange})` : "#6E7F9E", color: totalFotos && !loading ? "#111" : "#fff", boxShadow: totalFotos && !loading ? `0 6px 18px ${C.orange}44` : "none", opacity: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
               {loading ? (<><span style={{ width: 15, height: 15, border: "2px solid rgba(0,0,0,0.35)", borderTopColor: "#111", borderRadius: "50%", display: "inline-block", animation: "spin .7s linear infinite" }} />Analizando</>) : "Generar informe técnico"}
             </button>
             {loading && <p style={{ textAlign: "center", color: C.sub, fontSize: 13, marginTop: 12 }}>Analizando las fotos y tus notas… puede tardar un par de minutos. No cierres la página.</p>}
