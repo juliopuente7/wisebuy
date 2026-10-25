@@ -1102,8 +1102,8 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
                 🛡️ Revisado por <span style={{ color: C.orange, fontWeight: 700 }}>IA</span> entrenada por <b style={{ color: C.navy }}>peritos profesionales</b>
               </div>
               <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginTop: 22 }}>
-                <a href="/informe-ejemplo-piso.pdf" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1.5px solid ${C.orange}`, color: C.orange, fontWeight: 700, fontSize: 14, padding: "10px 18px", borderRadius: 10, textDecoration: "none" }}>📄 Ver ejemplo de informe</a>
-                <a href="/informe-ejemplo-casa.pdf" target="_blank" rel="noreferrer" style={{ color: C.sub, fontSize: 13.5, textDecoration: "underline" }}>ver otro ejemplo</a>
+                <a href="/informe-ejemplo-sevilla.pdf" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1.5px solid ${C.orange}`, color: C.orange, fontWeight: 700, fontSize: 14, padding: "10px 18px", borderRadius: 10, textDecoration: "none" }}>📄 Ver ejemplo de informe</a>
+                <a href="/informe-ejemplo-piso.pdf" target="_blank" rel="noreferrer" style={{ color: C.sub, fontSize: 13.5, textDecoration: "underline" }}>ver otro ejemplo</a>
               </div>
             </div>
             <div className="hero-panel" style={{ position: "relative", background: "radial-gradient(120% 120% at 70% 20%,#25406B 0%,#16294A 70%)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", minHeight: 230 }}>
