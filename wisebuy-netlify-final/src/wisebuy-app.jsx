@@ -1096,6 +1096,10 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 20, fontSize: 13, color: C.sub }}>
                 🛡️ Revisado por <span style={{ color: C.orange, fontWeight: 700 }}>IA</span> entrenada por <b style={{ color: C.navy }}>peritos profesionales</b>
               </div>
+              <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginTop: 22 }}>
+                <a href="/informe-ejemplo-piso.pdf" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1.5px solid ${C.orange}`, color: C.orange, fontWeight: 700, fontSize: 14, padding: "10px 18px", borderRadius: 10, textDecoration: "none" }}>📄 Ver ejemplo de informe</a>
+                <a href="/informe-ejemplo-casa.pdf" target="_blank" rel="noreferrer" style={{ color: C.sub, fontSize: 13.5, textDecoration: "underline" }}>ver otro ejemplo</a>
+              </div>
             </div>
             <div className="hero-panel" style={{ position: "relative", background: "radial-gradient(120% 120% at 70% 20%,#25406B 0%,#16294A 70%)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", minHeight: 230 }}>
               <div style={{ position: "absolute", width: 230, height: 230, borderRadius: "50%", border: "2px solid #2E4A78", top: -40, right: -60 }} />
@@ -1240,7 +1244,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </div>
 
             <button onClick={analizar} disabled={!totalFotos || loading}
-              style={{ width: "100%", padding: "16px 24px", borderRadius: 11, border: "none", fontFamily: sans, fontWeight: 700, fontSize: 16, cursor: totalFotos && !loading ? "pointer" : "not-allowed", background: totalFotos && !loading ? `linear-gradient(135deg, ${C.yellow}, ${C.orange})` : "#6E7F9E", color: totalFotos && !loading ? "#111" : "#fff", boxShadow: totalFotos && !loading ? `0 6px 18px ${C.orange}44` : "none", opacity: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
+              style={{ width: "100%", padding: "16px 24px", borderRadius: 11, border: "none", fontFamily: sans, fontWeight: 700, fontSize: 16, cursor: totalFotos && !loading ? "pointer" : "not-allowed", background: totalFotos && !loading ? `linear-gradient(135deg, ${C.red}, ${C.redDeep})` : "#6E7F9E", color: "#fff", boxShadow: totalFotos && !loading ? `0 4px 16px ${C.red}55` : "none", opacity: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
               {loading ? (<><span style={{ width: 15, height: 15, border: "2px solid rgba(0,0,0,0.35)", borderTopColor: "#111", borderRadius: "50%", display: "inline-block", animation: "spin .7s linear infinite" }} />Analizando</>) : "Generar informe técnico"}
             </button>
             {loading && <p style={{ textAlign: "center", color: C.sub, fontSize: 13, marginTop: 12 }}>Analizando las fotos y tus notas… puede tardar un par de minutos. No cierres la página.</p>}
@@ -1852,6 +1856,8 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
         </button>
         <div style={{ marginTop: 10 }}>
           <a href="/guias/" style={{ color: C.sub, fontSize: 13, fontFamily: sans, textDecoration: "underline" }}>📘 Guías para comprar vivienda sin sorpresas</a>
+          <span style={{ margin: "0 8px", color: C.faint }}>·</span>
+          <a href="/historia.html" style={{ color: C.sub, fontSize: 13, fontFamily: sans, textDecoration: "underline" }}>📰 Cómo nació WiseBuy</a>
         </div>
         <div style={{ marginTop: 8, fontSize: 12, color: C.sub }}>
           © {new Date().getFullYear()} WiseBuy · Julio Puente Pereira
