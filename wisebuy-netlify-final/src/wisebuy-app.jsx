@@ -57,6 +57,9 @@ export default function CosteRealVivienda() {
   const [ubicacion, setUbicacion] = useState("");
   const [tipo, setTipo] = useState("Piso");
   const [metros, setMetros] = useState("");
+  const [habitaciones, setHabitaciones] = useState("");
+  const [banos, setBanos] = useState("");
+  const [salones, setSalones] = useState("");
   const [refCat, setRefCat] = useState("");
   const [notas, setNotas] = useState("");
   const [dictando, setDictando] = useState(false);
@@ -703,7 +706,7 @@ DESPLAZAMIENTO: ~0,41 €/km (ida y vuelta). Urgencia (noche/festivo): +50%.
 `;
 
       const prompt = `Eres un experto español en compra de vivienda de segunda mano: arquitecto técnico y tasador de reformas. Analiza las imágenes de un inmueble en España.
-Tipo de inmueble: ${tipo}. Superficie: ${m2 ? m2 + " m²" : "no indicada"}.
+Tipo de inmueble: ${tipo}. Superficie: ${m2 ? m2 + " m²" : "no indicada"}. Distribución indicada por el usuario: ${habitaciones ? habitaciones + " habitaciones" : "habitaciones n/d"}, ${banos ? banos + " baños" : "baños n/d"}, ${salones ? salones + " salón/es" : "salón n/d"} (tenla en cuenta para dimensionar partidas —número de baños y cocinas a revisar, pintura por estancias— y para la valoración).
 Precio de venta: ${precioNum ? precioNum + " €" : "no indicado"}. Ubicación EXACTA indicada por el usuario: ${loc}. USA ESTA UBICACIÓN TAL CUAL; NO la cambies por otro municipio ni la deduzcas de la referencia catastral (que puede inducir a error). Si necesitas la zona para precios, usa exactamente la que ha escrito el usuario. MUY IMPORTANTE con los códigos postales: si el usuario indica un CÓDIGO POSTAL, identifica el MUNICIPIO EXACTO al que pertenece; MUCHOS códigos postales de las afueras pertenecen a un municipio propio, distinto de la ciudad grande vecina (por ejemplo, el CP 15220 es de AMES/Bertamiráns, NO de Santiago de Compostela). NUNCA asignes el inmueble a la ciudad grande más cercana por defecto. En todo el texto del informe (resumen, veredicto, entorno) refiérete a la ubicación tal como la indicó el usuario y a su municipio real, nunca a la ciudad grande vecina si no es el municipio correcto.
 Ten en cuenta el tipo de inmueble: si es garaje, nave o almacén NO evalúes baños ni cocina; céntrate en estructura, cubierta, portón/accesos, suelo, instalación eléctrica, humedades y ventilación. Si hay superficie en m², úsala para dimensionar las partidas (p. ej. pintura o suelo por m²).
 Prioriza SIEMPRE las fotos de la visita presencial sobre las del anuncio cuando existan.${refCat.trim() ? "\nReferencia catastral aportada: " + refCat.trim() + " (úsala como dato de la vivienda)." : ""}${notasTxt}
@@ -735,6 +738,8 @@ F2) NEGOCIACIÓN: partiendo del precio de venta (${precioNum ? precioNum + " €
    - un MENSAJE listo para enviar al vendedor o a la inmobiliaria, en tono correcto y firme, que justifique la rebaja con los defectos concretos detectados. Si no hay precio de venta, deja los importes en null pero redacta igual los consejos y el mensaje en términos relativos.
 
 H) ENTORNO Y ZONA: da una orientación PRUDENTE sobre el entorno de la ubicación indicada. NO inventes noticias, sucesos ni afirmes que una zona concreta es peligrosa o "de robos"; eso sería difamatorio y poco fiable. Ofrece a lo sumo un nivel orientativo general y, sobre todo, una lista de qué debe comprobar el comprador sobre la zona (seguridad según estadísticas oficiales del Ministerio del Interior, ruido, servicios, transporte, cómo se ve de día y de noche, hablar con vecinos). Si no hay ubicación o no tienes base suficiente, indica "Sin datos suficientes" y céntrate en qué verificar.
+
+DETALLE Y EXTENSIÓN: elabora un informe completo y bien desarrollado, del nivel que entregaría un perito. Desarrolla el "detalle" de cada partida con claridad (estado actual, motivo, plazo y consecuencia), incluye todas las partidas razonables que observes, da varios puntos concretos por cada zona de inspección, amplía la previsión a 5-10 años con los elementos relevantes y razona bien el veredicto de precio y la negociación. Sé exhaustivo y útil, pero sin repetir ni rellenar con texto vacío.
 
 Responde SOLO con JSON válido, sin markdown, con esta estructura exacta:
 {
@@ -1198,6 +1203,12 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
                     <span style={{ position: "absolute", right: 13, top: "50%", transform: "translateY(-50%)", color: C.sub }}>m²</span>
                   </div>
                 </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 14 }}>
+                <div><span style={label}>Habitaciones</span><input value={habitaciones} onChange={(e) => setHabitaciones(e.target.value)} inputMode="numeric" placeholder="3" style={inputStyle} /></div>
+                <div><span style={label}>Baños</span><input value={banos} onChange={(e) => setBanos(e.target.value)} inputMode="numeric" placeholder="2" style={inputStyle} /></div>
+                <div><span style={label}>Salón/es</span><input value={salones} onChange={(e) => setSalones(e.target.value)} inputMode="numeric" placeholder="1" style={inputStyle} /></div>
               </div>
 
               <span style={label}>Ubicación (ciudad o CP)</span>
