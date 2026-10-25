@@ -1454,6 +1454,20 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
               </div>
             )}
 
+            {/* Cabecera de marca WiseBuy (membrete del informe) */}
+            <div style={{ display: "flex", alignItems: "center", gap: 12, borderBottom: `2px solid ${C.navy}`, paddingBottom: 14, marginBottom: 16 }}>
+              <LogoMark size={42} />
+              <div style={{ flex: 1 }}>
+                <div style={{ fontFamily: serif, fontSize: 22, fontWeight: 700, color: C.navy, lineHeight: 1 }}>Wise<span style={{ color: C.orange }}>Buy</span></div>
+                <div style={{ fontSize: 11.5, color: C.sub, marginTop: 3 }}>Compra vivienda sin sorpresas · wisebuy.es</div>
+              </div>
+              <div style={{ textAlign: "right", fontSize: 11, color: C.sub, lineHeight: 1.45 }}>
+                <div style={{ fontFamily: mono, letterSpacing: 1, color: C.faint }}>INFORME TÉCNICO</div>
+                <div>{new Date().toLocaleDateString("es-ES")}</div>
+                <div>Domuscar Peritos</div>
+              </div>
+            </div>
+
             {/* Nota: generado por IA */}
             <div style={{ display: "flex", alignItems: "center", gap: 8, background: "#EAF1F8", border: `1px solid #B8D4E8`, borderRadius: 10, padding: "9px 14px", marginBottom: 16, fontSize: 12.5, color: "#16294A", lineHeight: 1.45 }}>
               <span style={{ fontFamily: mono, fontWeight: 700, color: "#F26419", textShadow: "0 0 8px rgba(45,226,230,0.6)" }}>IA</span>
