@@ -1329,6 +1329,30 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </section>
 
             <section style={{ marginTop: 44 }}>
+              <h2 style={{ fontFamily: serif, fontSize: 24, fontWeight: 700, color: C.navy, marginBottom: 6 }}>Esto es lo que WiseBuy te ayuda a ver</h2>
+              <p style={{ color: C.sub, fontSize: 15, lineHeight: 1.6, marginBottom: 20, maxWidth: 760 }}>
+                Te guiamos a <b style={{ color: C.ink }}>localizar el problema</b>, te decimos <b style={{ color: C.ink }}>cuánto va a costar arreglarlo</b> y, lo más importante, <b style={{ color: C.ink }}>si vale la pena seguir adelante</b> con la compra. Comprar una casa es una de las decisiones más importantes de tu vida: mejor asesorado y con los ojos abiertos.
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
+                {[
+                  ["/ej-tarima-humedad.png", "Humedad bajo la tarima", "Suelos levantados y abombados por filtraciones. Te decimos si es superficial o estructural y el coste real de sustituir el pavimento."],
+                  ["/ej-bano-olores.png", "Malos olores en el baño", "Zona afectada por un sifón o desagüe en mal estado. Identificamos el origen y qué reparación necesita antes de que vaya a más."],
+                  ["/ej-medidor-humedad.png", "Humedad en paredes", "Una lectura del 28,6% indica un nivel alto de humedad oculta. Te explicamos qué significa y cuánto puede costarte tratarla."],
+                  ["/ej-tejado-goteras.png", "Tejas rotas y goteras", "Una teja desplazada o partida acaba en filtraciones al interior. Valoramos la gravedad y el coste de repararlo antes de que dañe la estructura."],
+                ].map(([img, t, d]) => (
+                  <div key={img} style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 14, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+                    <img src={img} alt={t} loading="lazy" style={{ width: "100%", height: 200, objectFit: "cover", display: "block", background: "#0E1726" }} />
+                    <div style={{ padding: "15px 16px 18px" }}>
+                      <h3 style={{ fontFamily: sans, fontSize: 16, fontWeight: 700, color: C.navy, margin: "0 0 7px" }}>{t}</h3>
+                      <p style={{ color: C.sub, fontSize: 13.5, lineHeight: 1.55, margin: 0 }}>{d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p style={{ color: C.faint, fontSize: 12, marginTop: 12, fontStyle: "italic" }}>Imágenes de ejemplo ilustrativas de los defectos que el informe te ayuda a detectar.</p>
+            </section>
+
+            <section style={{ marginTop: 44 }}>
               <h2 style={{ fontFamily: serif, fontSize: 24, fontWeight: 700, color: C.navy, marginBottom: 4 }}>Guías para comprar con criterio</h2>
               <p style={{ color: C.sub, fontSize: 14.5, marginBottom: 14 }}>Todo lo que deberías saber antes de firmar. Gratis.</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 10 }}>
