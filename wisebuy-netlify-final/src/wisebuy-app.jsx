@@ -1090,7 +1090,25 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
       {!result && !verificandoPago && (
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 20px 6px", position: "relative", zIndex: 1 }}>
           <div className="hero-box" style={{ display: "grid", gridTemplateColumns: "1.12fr 0.88fr", background: "linear-gradient(180deg,#ffffff,#EEF2F7)", border: `1px solid ${C.line}`, borderRadius: 22, overflow: "hidden", boxShadow: "0 10px 34px rgba(22,41,74,.09)" }}>
-            <div style={{ padding: "42px 38px" }}>
+            <div style={{ position: "relative", padding: "42px 38px", overflow: "hidden" }}>
+              <svg aria-hidden="true" viewBox="0 0 640 520" preserveAspectRatio="xMidYMid slice" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.1, pointerEvents: "none" }}>
+                <g fill="none" stroke="#16294A" strokeWidth="2" strokeLinejoin="round">
+                  <rect x="40" y="48" width="560" height="424" strokeWidth="3.5" />
+                  <path d="M300 48 L300 250 M40 250 L300 250" />
+                  <path d="M300 250 L300 472 M300 360 L600 360" />
+                  <path d="M440 250 L440 360" />
+                  <path d="M300 180 A60 60 0 0 1 240 240" strokeWidth="1.5" />
+                  <path d="M300 180 L300 240" strokeWidth="1.5" />
+                  <path d="M360 360 A54 54 0 0 1 414 306" strokeWidth="1.5" />
+                  <path d="M120 48 L120 36 M190 48 L190 36 M120 42 L190 42" strokeWidth="1.5" />
+                  <g strokeWidth="1.5"><path d="M470 388 L560 388 M470 404 L560 404 M470 420 L560 420 M470 436 L560 436 M470 452 L560 452 M470 388 L470 452" /></g>
+                  <path d="M56 250 L56 150 L110 150" strokeWidth="1.5" />
+                  <circle cx="160" cy="360" r="40" strokeWidth="1.5" />
+                  <rect x="330" y="275" width="70" height="40" rx="18" strokeWidth="1.5" />
+                  <g strokeWidth="1.2"><path d="M40 24 L600 24 M40 18 L40 30 M600 18 L600 30" /></g>
+                </g>
+              </svg>
+              <div style={{ position: "relative", zIndex: 1 }}>
               <span style={{ display: "inline-block", fontFamily: mono, fontSize: 11.5, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: C.orange, background: C.amberSoft, padding: "5px 12px", borderRadius: 999, marginBottom: 16 }}>Tu perito de bolsillo</span>
               <h1 style={{ fontFamily: serif, fontSize: "clamp(28px,5vw,42px)", fontWeight: 700, lineHeight: 1.08, letterSpacing: -0.5, margin: 0, color: C.navy }}>
                 Visita tu futura casa con <span style={{ color: C.orange, fontStyle: "italic" }}>criterio</span>
@@ -1104,6 +1122,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
               <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginTop: 22 }}>
                 <a href="/informe-ejemplo-sevilla.pdf" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: `1.5px solid ${C.orange}`, color: C.orange, fontWeight: 700, fontSize: 14, padding: "10px 18px", borderRadius: 10, textDecoration: "none" }}>📄 Ver ejemplo de informe</a>
                 <a href="/informe-ejemplo-piso.pdf" target="_blank" rel="noreferrer" style={{ color: C.sub, fontSize: 13.5, textDecoration: "underline" }}>ver otro ejemplo</a>
+              </div>
               </div>
             </div>
             <div className="hero-panel" style={{ position: "relative", background: "radial-gradient(120% 120% at 70% 20%,#25406B 0%,#16294A 70%)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", minHeight: 230 }}>
