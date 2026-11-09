@@ -1176,12 +1176,12 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </header>
 
             <button onClick={printGuia}
-              style={{ width: "100%", marginBottom: 24, padding: "12px 18px", borderRadius: 11, cursor: "pointer",
-                background: C.card, border: `1px solid ${C.lineHi}`, color: C.sub, fontWeight: 600, fontSize: 14,
-                display: "flex", alignItems: "center", justifyContent: "center", gap: 9, boxShadow: "none" }}>
+              style={{ width: "100%", marginBottom: 24, padding: "13px 18px", borderRadius: 11, cursor: "pointer",
+                background: "#EAF1FC", border: "1.5px solid #2E5AAC", color: "#1E3F7A", fontWeight: 700, fontSize: 14.5,
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 9, boxShadow: "0 2px 8px rgba(46,90,172,0.14)" }}>
               <span style={{ fontSize: 16 }}>⤓</span>
               Descargar checklist de visita
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: C.ok, background: C.panelGreen, padding: "3px 8px", borderRadius: 999, letterSpacing: 0.3 }}>GRATIS</span>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: "#fff", background: C.ok, padding: "3px 8px", borderRadius: 999, letterSpacing: 0.3 }}>GRATIS</span>
             </button>
             <p style={{ color: C.faint, fontSize: 12.5, textAlign: "center", marginTop: -14, marginBottom: 8 }}>
               Qué fotos sacar, qué pruebas hacer y qué papeles pedir. Llévala a la visita.
