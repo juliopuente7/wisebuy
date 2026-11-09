@@ -984,7 +984,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
     baja: { c: C.ok, l: "Preventivo", icon: "🟢", bg: "#E3F7EE", bd: "#4FD08A" },
   };
   const label = { fontSize: 11.5, fontWeight: 600, color: C.sub, letterSpacing: 0.8, textTransform: "uppercase", marginBottom: 8, display: "block" };
-  const inputStyle = { width: "100%", boxSizing: "border-box", padding: "13px 15px", fontSize: 15.5, fontFamily: sans, borderRadius: 10, border: `1px solid ${C.fieldLine}`, background: C.field, color: C.fieldInk, outline: "none" };
+  const inputStyle = { width: "100%", boxSizing: "border-box", padding: "13px 15px", fontSize: 15.5, fontFamily: sans, borderRadius: 10, border: `1.5px solid ${C.lineHi}`, background: C.field, color: C.fieldInk, outline: "none" };
   const secHead = { fontSize: 11.5, fontWeight: 700, color: C.orange, margin: "0 0 14px", letterSpacing: 1.5, textTransform: "uppercase", fontFamily: mono };
 
   const Dropzone = ({ prevs, which, title, hint, accent }) => (
@@ -1176,12 +1176,12 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </header>
 
             <button onClick={printGuia}
-              style={{ width: "100%", marginBottom: 24, padding: "15px 20px", borderRadius: 12, border: "none", cursor: "pointer",
-                background: `linear-gradient(135deg, ${C.red}, ${C.redDeep})`, color: "#fff", fontWeight: 700, fontSize: 15.5,
-                display: "flex", alignItems: "center", justifyContent: "center", gap: 10, boxShadow: `0 4px 16px ${C.red}55` }}>
-              <span style={{ fontSize: 18 }}>⤓</span>
+              style={{ width: "100%", marginBottom: 24, padding: "12px 18px", borderRadius: 11, cursor: "pointer",
+                background: C.card, border: `1px solid ${C.lineHi}`, color: C.sub, fontWeight: 600, fontSize: 14,
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 9, boxShadow: "none" }}>
+              <span style={{ fontSize: 16 }}>⤓</span>
               Descargar checklist de visita
-              <span style={{ fontSize: 11, fontWeight: 600, background: "rgba(255,255,255,0.22)", padding: "3px 8px", borderRadius: 999, letterSpacing: 0.3 }}>GRATIS</span>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: C.ok, background: C.panelGreen, padding: "3px 8px", borderRadius: 999, letterSpacing: 0.3 }}>GRATIS</span>
             </button>
             <p style={{ color: C.faint, fontSize: 12.5, textAlign: "center", marginTop: -14, marginBottom: 8 }}>
               Qué fotos sacar, qué pruebas hacer y qué papeles pedir. Llévala a la visita.
@@ -1193,7 +1193,11 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             <div className="landing-right">
 
             {/* Datos */}
-            <div style={{ marginBottom: 22 }}>
+            <div style={{ marginBottom: 22, background: "#FFFDF8", border: `1.5px solid ${C.yellow}66`, borderRadius: 14, padding: "18px 18px 20px", boxShadow: "0 2px 10px rgba(242,100,25,0.06)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
+                <span style={{ width: 22, height: 22, borderRadius: "50%", background: `linear-gradient(135deg, ${C.yellow}, ${C.orange})`, color: "#1A1815", fontWeight: 800, fontSize: 12.5, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>1</span>
+                <span style={{ fontWeight: 700, fontSize: 14.5, color: C.navy }}>Rellena los datos de la vivienda</span>
+              </div>
               <span style={label}>Tipo de inmueble</span>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
                 {["Piso", "Casa", "Garaje", "Nave", "Almacén", "Local", "Terreno"].map((op) => (
@@ -1274,8 +1278,8 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </div>
 
             <button onClick={analizar} disabled={!totalFotos || loading}
-              style={{ width: "100%", padding: "16px 24px", borderRadius: 11, border: "none", fontFamily: sans, fontWeight: 700, fontSize: 16, cursor: totalFotos && !loading ? "pointer" : "not-allowed", background: totalFotos && !loading ? `linear-gradient(135deg, ${C.red}, ${C.redDeep})` : "#6E7F9E", color: "#fff", boxShadow: totalFotos && !loading ? `0 4px 16px ${C.red}55` : "none", opacity: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
-              {loading ? (<><span style={{ width: 15, height: 15, border: "2px solid rgba(0,0,0,0.35)", borderTopColor: "#111", borderRadius: "50%", display: "inline-block", animation: "spin .7s linear infinite" }} />Analizando</>) : "Generar informe técnico"}
+              style={{ width: "100%", padding: "19px 24px", borderRadius: 13, border: "none", fontFamily: sans, fontWeight: 800, fontSize: 17.5, letterSpacing: 0.2, cursor: totalFotos && !loading ? "pointer" : "not-allowed", background: totalFotos && !loading ? `linear-gradient(135deg, ${C.red}, ${C.redDeep})` : "#6E7F9E", color: "#fff", boxShadow: totalFotos && !loading ? `0 6px 22px ${C.red}66` : "none", animation: totalFotos && !loading ? "ctaGlow 2.2s ease-in-out infinite" : "none", opacity: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
+              {loading ? (<><span style={{ width: 15, height: 15, border: "2px solid rgba(0,0,0,0.35)", borderTopColor: "#111", borderRadius: "50%", display: "inline-block", animation: "spin .7s linear infinite" }} />Analizando</>) : (<><span style={{ fontSize: 19 }}>⚡</span>Generar informe técnico</>)}
             </button>
             {loading && <p style={{ textAlign: "center", color: C.sub, fontSize: 13, marginTop: 12 }}>Analizando las fotos y tus notas… puede tardar un par de minutos. No cierres la página.</p>}
             {!loading && (
@@ -1405,7 +1409,9 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
         <style>{`
           @keyframes spin{to{transform:rotate(360deg)}}
           @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+          @keyframes ctaGlow{0%,100%{box-shadow:0 5px 18px rgba(226,59,59,.45)}50%{box-shadow:0 8px 30px rgba(226,59,59,.72)}}
           ::placeholder{color:#98A2B3}
+          input:focus,textarea:focus{border-color:#F26419!important;box-shadow:0 0 0 3px rgba(242,100,25,0.16)!important}
           .guia-print{display:none}
           .hero-box{grid-template-columns:1.12fr 0.88fr}
           @media(max-width:720px){ .hero-box{grid-template-columns:1fr !important} .hero-panel{display:none !important} .cred-box{grid-template-columns:1fr !important} }
@@ -1843,28 +1849,28 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
       </div>
 
       {/* Botón flotante WhatsApp */}
-      <a className="no-print" href="https://wa.me/34604846688?text=Hola%2C%20tengo%20una%20duda%20sobre%20WiseBuy" target="_blank" rel="noopener noreferrer" style={{
-        position: "fixed", bottom: 78, right: 20, zIndex: 41,
-        display: "flex", alignItems: "center", gap: 8,
+      <a className="no-print" href="https://wa.me/34604846688?text=Hola%2C%20tengo%20una%20duda%20sobre%20WiseBuy" target="_blank" rel="noopener noreferrer" title="¿Dudas? Escríbenos por WhatsApp" style={{
+        position: "fixed", bottom: 18, left: 18, zIndex: 41,
+        display: "flex", alignItems: "center", gap: 7,
         background: "#25D366", color: "#fff", textDecoration: "none",
-        border: "none", borderRadius: 30,
-        padding: "13px 20px", fontSize: 15, fontWeight: 700, fontFamily: sans,
-        boxShadow: "0 6px 20px rgba(37,211,102,0.5)",
+        border: "none", borderRadius: 24,
+        padding: "9px 14px", fontSize: 13, fontWeight: 700, fontFamily: sans,
+        boxShadow: "0 3px 12px rgba(37,211,102,0.38)", opacity: 0.95,
       }}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.157 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981z"/></svg>
-        ¿Dudas? Escríbenos
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.157 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981z"/></svg>
+        Dudas
       </a>
 
       {/* Botón flotante fijo: cómo funciona */}
-      <button className="no-print" onClick={() => setAyuda(true)} style={{
-        position: "fixed", bottom: 20, right: 20, zIndex: 40,
-        display: "flex", alignItems: "center", gap: 8,
-        background: `linear-gradient(135deg, ${C.yellow}, ${C.orange})`,
-        color: "#1A1815", border: "none", borderRadius: 30,
-        padding: "13px 20px", fontSize: 15, fontWeight: 700, cursor: "pointer",
-        boxShadow: "0 6px 20px rgba(255,122,47,0.45)", fontFamily: sans,
+      <button className="no-print" onClick={() => setAyuda(true)} title="¿Cómo funciona?" style={{
+        position: "fixed", bottom: 18, right: 18, zIndex: 40,
+        display: "flex", alignItems: "center", gap: 7,
+        background: "#fff",
+        color: C.navy, border: `1px solid ${C.lineHi}`, borderRadius: 24,
+        padding: "9px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+        boxShadow: "0 3px 12px rgba(22,41,74,0.12)", fontFamily: sans, opacity: 0.95,
       }}>
-        <span style={{ fontSize: 18 }}>❓</span> ¿Cómo funciona?
+        <span style={{ fontSize: 15 }}>❓</span> Cómo funciona
       </button>
 
       {/* Modal de ayuda */}
