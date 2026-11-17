@@ -1077,7 +1077,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
       </div>
 
       <div className="no-print" style={{ borderBottom: `2px solid transparent`, borderImage: `linear-gradient(90deg, ${C.yellow}, ${C.orange}) 1`, background: C.navy, position: "sticky", top: 0, zIndex: 10 }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px 28px", display: "flex", alignItems: "center", gap: 11 }}>
+        <div style={{ maxWidth: 1440, margin: "0 auto", padding: "14px 36px", display: "flex", alignItems: "center", gap: 11 }}>
           <div onClick={reset} title="Volver al inicio" style={{ display: "flex", alignItems: "center", gap: 11, cursor: "pointer" }}>
             <LogoMark size={28} />
             <span style={{ fontWeight: 700, fontSize: 16, letterSpacing: -0.2, color: "#fff" }}>WiseBuy</span>
@@ -1088,7 +1088,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
       </div>
 
       {!result && !verificandoPago && (
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 20px 6px", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1440, margin: "0 auto", padding: "28px 28px 6px", position: "relative", zIndex: 1 }}>
           <div className="hero-box" style={{ display: "grid", gridTemplateColumns: "1.12fr 0.88fr", background: "linear-gradient(180deg,#ffffff,#EEF2F7)", border: `1px solid ${C.line}`, borderRadius: 22, overflow: "hidden", boxShadow: "0 10px 34px rgba(22,41,74,.09)" }}>
             <div style={{ position: "relative", padding: "42px 38px", overflow: "hidden" }}>
               <svg aria-hidden="true" viewBox="0 0 640 520" preserveAspectRatio="xMidYMid slice" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.1, pointerEvents: "none" }}>
@@ -1141,7 +1141,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
         </div>
       )}
 
-      <div className="app-main" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 28px 96px", position: "relative", zIndex: 1 }}>
+      <div className="app-main" style={{ maxWidth: 1440, margin: "0 auto", padding: "20px 36px 96px", position: "relative", zIndex: 1 }}>
         {verificandoPago && (
           <div style={{ background: C.card, border: `1px solid ${C.orange}55`, borderRadius: 16, padding: "34px 24px", textAlign: "center", marginBottom: 20 }}>
             <div style={{ fontSize: 34, marginBottom: 10 }}>🔒</div>
@@ -1175,10 +1175,13 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
               </div>
             </header>
 
-            <button onClick={printGuia}
+            <div style={{ textAlign: "center", marginBottom: 10, fontWeight: 800, fontSize: 16, color: C.navy, lineHeight: 1.35 }}>
+              📋 Descarga aquí tu checklist <span style={{ color: C.ok }}>gratis</span> para tu visita
+            </div>
+            <button onClick={printGuia} className="checklist-btn"
               style={{ width: "100%", marginBottom: 24, padding: "13px 18px", borderRadius: 11, cursor: "pointer",
                 background: "#EAF1FC", border: "1.5px solid #2E5AAC", color: "#1E3F7A", fontWeight: 700, fontSize: 14.5,
-                display: "flex", alignItems: "center", justifyContent: "center", gap: 9, boxShadow: "0 2px 8px rgba(46,90,172,0.14)" }}>
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 9, boxShadow: "0 2px 8px rgba(46,90,172,0.14)", transition: "all .18s ease" }}>
               <span style={{ fontSize: 16 }}>⤓</span>
               Descargar checklist de visita
               <span style={{ fontSize: 10.5, fontWeight: 700, color: "#fff", background: C.ok, padding: "3px 8px", borderRadius: 999, letterSpacing: 0.3 }}>GRATIS</span>
@@ -1412,6 +1415,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
           @keyframes ctaGlow{0%,100%{box-shadow:0 5px 18px rgba(226,59,59,.45)}50%{box-shadow:0 8px 30px rgba(226,59,59,.72)}}
           ::placeholder{color:#98A2B3}
           input:focus,textarea:focus{border-color:#F26419!important;box-shadow:0 0 0 3px rgba(242,100,25,0.16)!important}
+          .checklist-btn:hover{background:#2E5AAC!important;color:#fff!important;transform:translateY(-2px);box-shadow:0 8px 22px rgba(46,90,172,0.45)!important}
           .guia-print{display:none}
           .hero-box{grid-template-columns:1.12fr 0.88fr}
           @media(max-width:720px){ .hero-box{grid-template-columns:1fr !important} .hero-panel{display:none !important} .cred-box{grid-template-columns:1fr !important} }
