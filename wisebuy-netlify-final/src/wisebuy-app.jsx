@@ -1169,9 +1169,13 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
               <p style={{ color: C.sub, fontSize: 17, lineHeight: 1.6, marginTop: 0 }}>
                 ¿Vas a comprar una casa y no quieres reformas con las que no contabas ni vicios ocultos? Rellena la checklist que te facilita <b style={{ color: C.ink }}>WiseBuy</b>, adjunta las fotos y la documentación, y recibe un informe que te explica <b style={{ color: C.warn }}>qué gastos ya tienes</b>, <b style={{ color: C.yellow }}>cuáles llegarán a corto plazo</b> y <b style={{ color: C.ok }}>cuáles a largo plazo</b>.
               </p>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 16, background: C.card, border: `1px solid ${C.line}`, borderRadius: 999, padding: "7px 14px" }}>
-                <span style={{ fontSize: 15 }}>🛡️</span>
-                <span style={{ fontSize: 12.5, color: C.ink, fontWeight: 600 }}>Revisado por <span style={{ fontFamily: mono, fontWeight: 700, fontSize: 13, letterSpacing: 0.5, color: "#F26419", textShadow: "0 0 9px rgba(45,226,230,0.65)" }}>IA</span> entrenada por peritos profesionales</span>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginTop: 20 }}>
+                {[["1", "Descarga la checklist gratis"], ["2", "Llévala a la visita y haz fotos"], ["3", "Súbelas y recibe tu informe"]].map(([n, t]) => (
+                  <div key={n} style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 12, padding: "13px 10px", textAlign: "center" }}>
+                    <div style={{ width: 26, height: 26, borderRadius: "50%", margin: "0 auto 8px", background: `linear-gradient(135deg, ${C.yellow}, ${C.orange})`, color: "#1A1815", fontWeight: 800, fontSize: 13.5, display: "flex", alignItems: "center", justifyContent: "center" }}>{n}</div>
+                    <div style={{ fontSize: 12.5, color: C.ink, fontWeight: 600, lineHeight: 1.35 }}>{t}</div>
+                  </div>
+                ))}
               </div>
             </header>
 
@@ -1191,6 +1195,17 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </p>
             <div style={{ background: C.panelYellow, border: `1px solid ${C.yellow}33`, borderRadius: 11, padding: "12px 15px", marginBottom: 26, fontSize: 12.5, color: C.sub, lineHeight: 1.55 }}>
               <strong style={{ color: C.yellow }}>Cómo usarla:</strong> en la visita, ve marcando la checklist y captura cada punto — sube luego <strong style={{ color: C.ink }}>las fotos</strong> aquí y cuenta lo que viste en cada zona en el campo de <strong style={{ color: C.ink }}>notas de voz o texto</strong> de abajo. Con eso y el precio, generamos el informe y <strong style={{ color: C.ink }}>cuánto puedes negociar</strong>.
+            </div>
+
+            <div style={{ background: "#0E1E38", borderRadius: 14, padding: "22px", marginBottom: 16 }}>
+              <div style={{ color: "#fff", fontFamily: serif, fontSize: 19, fontWeight: 700, marginBottom: 6 }}>¿Quieres ver cómo es el informe?</div>
+              <div style={{ color: "#AEB9CC", fontSize: 13.5, lineHeight: 1.55, marginBottom: 15 }}>Mira un informe real completo antes de pagar. Lo que ves es exactamente lo que recibes.</div>
+              <a href="/informe-ejemplo-sevilla.pdf" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: `linear-gradient(135deg, ${C.yellow}, ${C.orange})`, color: "#1A1815", fontWeight: 800, fontSize: 14.5, padding: "12px 20px", borderRadius: 10, textDecoration: "none" }}>📄 Ver un informe de verdad</a>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 9, marginBottom: 26 }}>
+              {[["🔒", "Pago seguro con Stripe"], ["⚡", "Listo en minutos"], ["📄", "PDF descargable"], ["🙅", "Sin registro"]].map(([i, t]) => (
+                <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12.5, color: C.ink, fontWeight: 600, background: C.card, border: `1px solid ${C.line}`, borderRadius: 999, padding: "6px 12px" }}>{i} {t}</span>
+              ))}
             </div>
             </div>
             <div className="landing-right">
@@ -1286,9 +1301,15 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
             </button>
             {loading && <p style={{ textAlign: "center", color: C.sub, fontSize: 13, marginTop: 12 }}>Analizando las fotos y tus notas… puede tardar un par de minutos. No cierres la página.</p>}
             {!loading && (
-              <p style={{ textAlign: "center", color: C.faint, fontSize: 12.5, marginTop: 12, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-                <span style={{ color: C.orange }}>⚡</span> Tarda un par de minutos en analizarlo todo · {PRECIO} · PDF descargable
-              </p>
+              <>
+                <p style={{ textAlign: "center", color: C.ink, fontSize: 13.5, marginTop: 12, fontWeight: 600 }}>
+                  <span style={{ color: C.navy, fontWeight: 800 }}>{PRECIO}</span> · informe PDF completo · listo en minutos
+                </p>
+                <p style={{ textAlign: "center", color: C.faint, fontSize: 12, marginTop: 5, display: "flex", alignItems: "center", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
+                  <span>🔒 Pago seguro</span><span>🙅 Sin registro</span><span>⚡ En 2 min</span>
+                </p>
+                {!totalFotos && <p style={{ textAlign: "center", color: C.orange, fontSize: 12.5, marginTop: 9, fontWeight: 700 }}>⬆ Sube al menos 1 foto de la vivienda para generar el informe</p>}
+              </>
             )}
             {error && <div style={{ marginTop: 20, background: C.warnSoft, border: `1px solid ${C.warn}44`, borderRadius: 11, padding: 16, fontSize: 14, lineHeight: 1.5, color: C.ink }}>{error}</div>}
 
@@ -1416,6 +1437,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
           ::placeholder{color:#98A2B3}
           input:focus,textarea:focus{border-color:#F26419!important;box-shadow:0 0 0 3px rgba(242,100,25,0.16)!important}
           .checklist-btn:hover{background:#2E5AAC!important;color:#fff!important;transform:translateY(-2px);box-shadow:0 8px 22px rgba(46,90,172,0.45)!important}
+          @media(max-width:720px){ .fab{padding:10px!important;border-radius:50%!important;gap:0!important} .fab-label{display:none!important} }
           .guia-print{display:none}
           .hero-box{grid-template-columns:1.12fr 0.88fr}
           @media(max-width:720px){ .hero-box{grid-template-columns:1fr !important} .hero-panel{display:none !important} .cred-box{grid-template-columns:1fr !important} }
@@ -1853,7 +1875,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
       </div>
 
       {/* Botón flotante WhatsApp */}
-      <a className="no-print" href="https://wa.me/34604846688?text=Hola%2C%20tengo%20una%20duda%20sobre%20WiseBuy" target="_blank" rel="noopener noreferrer" title="¿Dudas? Escríbenos por WhatsApp" style={{
+      <a className="no-print fab" href="https://wa.me/34604846688?text=Hola%2C%20tengo%20una%20duda%20sobre%20WiseBuy" target="_blank" rel="noopener noreferrer" title="¿Dudas? Escríbenos por WhatsApp" style={{
         position: "fixed", bottom: 18, left: 18, zIndex: 41,
         display: "flex", alignItems: "center", gap: 7,
         background: "#25D366", color: "#fff", textDecoration: "none",
@@ -1862,11 +1884,11 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
         boxShadow: "0 3px 12px rgba(37,211,102,0.38)", opacity: 0.95,
       }}>
         <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.157 5.335 5.5 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981z"/></svg>
-        Dudas
+        <span className="fab-label">Dudas</span>
       </a>
 
       {/* Botón flotante fijo: cómo funciona */}
-      <button className="no-print" onClick={() => setAyuda(true)} title="¿Cómo funciona?" style={{
+      <button className="no-print fab" onClick={() => setAyuda(true)} title="¿Cómo funciona?" style={{
         position: "fixed", bottom: 18, right: 18, zIndex: 40,
         display: "flex", alignItems: "center", gap: 7,
         background: "#fff",
@@ -1874,7 +1896,7 @@ OBLIGATORIO: rellena SIEMPRE estos campos, nunca los dejes vacíos: cada partida
         padding: "9px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer",
         boxShadow: "0 3px 12px rgba(22,41,74,0.12)", fontFamily: sans, opacity: 0.95,
       }}>
-        <span style={{ fontSize: 15 }}>❓</span> Cómo funciona
+        <span style={{ fontSize: 15 }}>❓</span> <span className="fab-label">Cómo funciona</span>
       </button>
 
       {/* Modal de ayuda */}
